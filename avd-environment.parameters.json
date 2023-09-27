@@ -1,0 +1,155 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "uksouth"
+        },
+        "resourceGroupName": {
+            "value": "uks-rb81-vdi-avd-hpl-priv-001-01"
+        },
+        "imageSource": {
+            "value": "subscriptions/2820ff07-405a-49c6-b74b-d78825165e02/resourceGroups/rg-Win11-template/providers/Microsoft.Compute/virtualMachines/i4xsd3rrtnobm-vm"
+        },       
+        "hostpoolName": {
+            "value": "rb81-PAW-AVD"
+        },
+        "hostpoolFriendlyName": {
+            "value": "Priv AVDs"
+        },
+        "maxSessionLimit": {
+            "value": 10
+        },
+        "appGroupName": {
+            "value": "Priv Apps"
+        },
+        "appGroupNameFriendlyName": {
+            "value": "Privileged Apps for Jump Hosts"
+        },
+        "workspaceName": {
+            "value": "PAW Jump Hosts"
+        },
+        "workspaceNameFriendlyName":{
+            "value": "Jump Hosts workspace"
+        },
+        "workspaceSku": {
+            "value": "PerGB2018"
+        },
+        "hostpoolLogs": {
+            "value": {
+                "categories": [
+                    "Checkpoint",
+                    "Error",
+                    "Connection",
+                    "HostRegistration",
+                    "AgentHealthStatus"
+                ]
+            }
+        },
+        "appGroupLogs": {
+            "value": {
+                "categories": [
+                    "Error"
+                ]
+            }
+        },
+        "workspaceLogs": {
+            "value": {
+                "categories": [
+                    "Checkpoint",
+                    "Error",
+                    "Management",
+                    "Feed"
+                ]
+            }
+        },
+        "applicationgrouptype": {
+            "value": "Desktop"
+        },
+        "preferredAppGroupType": {
+            "value": "Desktop"
+        },
+        "hostPoolType": {
+            "value": "Personal"
+        },
+        "loadBalancerType": {
+            "value": "BreadthFirst"
+        },
+        "nsgName": {
+            "value": "nsg-priv"
+        },
+        "vnetName": {
+            "value": "vnet-priv"
+        },
+        "vnetAddressPrefix": {
+            "value": "10.0.0.0/15"
+        },
+        "vnetSubnets": {
+            "value": {
+                "subnets": [
+                    {
+                        "name": "DefaultSubnet",
+                        "addressPrefix": "10.0.0.0/24"
+                    }
+                ]
+            }
+        },
+        "aadJoin": {
+            "value": true
+        },
+        "intune": {
+            "value": true
+        },
+        "availabilityOption": {
+            "value": "None"
+        },
+        "availabilitySetName": {
+            "value": "AvailabilitySet"
+        },
+        "availabilityZone": {
+            "value": 1
+        },
+        "rdshPrefix": {
+            "value": "priv"
+        },
+        "rdshNumberOfInstances": {
+            "value": 2
+        },
+        "rdshInitialNumber": {
+            "value": 0
+        },
+        "rdshVMDiskType": {
+            "value": "Standard_LRS"
+        },
+        "rdshVmSize": {
+            "value": "Standard_B2ms"
+        },
+        "computeGalleryName": {
+            "value": "uksbldglbssvgal01"
+        },
+        "imagePublisher": {
+            "value": "Microsoft"
+        },
+        "imageDefinitionName": {
+            "value": "uks-img-Windows-desktop-11-gen2-22h2-priv-tl-001"
+        },
+        "imageOffer": {
+            "value": "Windows-11"
+        },
+        "imageSKU": {
+          "value": "win11-22h2-ent"
+        },
+        "osType": {
+          "value": "Windows"
+        },
+        "osState": {
+          "value": "Generalized"
+        },
+        "hyperVGeneration": {
+            "value": "V2"
+        },
+        "keyVaultUserId": {
+            "value": "9d204953-8a43-47e6-a29b-28500b5e5d48"
+        }
+    }
+}
