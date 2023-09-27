@@ -56,9 +56,6 @@ param rdshInitialNumber int
 @description('The name of the hostpool')
 param hostpoolName string
 
-@description('Security Type')
-param securityType string = 'TrustedLaunch'
-
 @description('IMPORTANT: Please don\'t use this parameter as AAD Join is not supported yet. True if AAD Join, false if AD join')
 param aadJoin bool
 
@@ -113,7 +110,16 @@ resource vm 'Microsoft.Compute/virtualMachines@2023-03-01' = [for i in range(0, 
   properties: {  
     // Set the security type based on the value of the securityType parameter
     securityProfile: {
-      securityType: securityType
+      uefiSettings: {
+        secureBootEnabled: true
+        vTpmEnabled: true
+      }
+      securityType: 'TrustedLaunch'
+    }
+    diagnosticsProfile: {
+      bootDiagnostics: {
+        enabled: true
+      }
     }
     hardwareProfile: {
       vmSize: rdshVmSize
